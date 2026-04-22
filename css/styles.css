@@ -145,16 +145,15 @@ ul { list-style: none; padding: 0; }
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  opacity: 0.55;
-  filter: saturate(0.95) contrast(1.05);
+  opacity: 1;
 }
 .hero-bg {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(1200px 600px at 80% -10%, rgba(77, 168, 255, 0.22), transparent 60%),
-    radial-gradient(900px 500px at -10% 100%, rgba(43, 210, 123, 0.22), transparent 60%),
-    linear-gradient(180deg, rgba(11, 15, 13, 0.55) 0%, rgba(10, 18, 16, 0.9) 100%);
+    radial-gradient(1200px 600px at 80% -10%, rgba(77, 168, 255, 0.15), transparent 60%),
+    radial-gradient(900px 500px at -10% 100%, rgba(43, 210, 123, 0.15), transparent 60%),
+    linear-gradient(180deg, rgba(11, 15, 13, 0.1) 0%, rgba(10, 18, 16, 0.55) 100%);
   z-index: 1;
 }
 .hero-inner {
