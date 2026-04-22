@@ -18,4 +18,16 @@
 
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  document.querySelectorAll('a.tile img').forEach((img) => {
+    const sync = () => {
+      const a = img.closest('a.tile');
+      const src = img.getAttribute('src');
+      if (a && src && !src.endsWith('placeholder.svg')) {
+        a.setAttribute('href', src);
+      }
+    };
+    img.addEventListener('load', sync);
+    if (img.complete && img.naturalWidth > 0) sync();
+  });
 })();
