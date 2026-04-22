@@ -1,18 +1,16 @@
-Drop your graphic design images in this folder, named exactly:
+Drop your graphic design images in this folder, named:
 
-    01.jpg
-    02.jpg
-    03.jpg
-    04.jpg
-    05.jpg
-    06.jpg
+    01.jpg (or 01.jpeg or 01.png)
+    02.jpg (or 02.jpeg or 02.png)
+    03.jpg (or 03.jpeg or 03.png)
+    04.jpg (or 04.jpeg or 04.png)
+    05.jpg (or 05.jpeg or 05.png)
+    06.jpg (or 06.jpeg or 06.png)
 
-The page already points at these filenames — no HTML editing needed.
+The page auto-detects whichever extension you use — no HTML
+editing needed. Just name the file 01, 02, 03, etc.
 
 Notes:
-- Use JPG by default. For PNG, open index.html and change the
-  extension from .jpg to .png on both the <a href="..."> and the
-  <img src="..."> for that tile.
 - For a PDF, save it here (e.g. 01.pdf) and edit index.html to change
   the <a href="images/design/01.jpg"> to <a href="images/design/01.pdf">.
 - Aspect ratio: tiles display 4:3, so landscape crops look cleanest.

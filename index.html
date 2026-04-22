@@ -10,6 +10,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <script>
+    window.tryImageFallbacks = function (img) {
+      const exts = ['.jpeg', '.jpg', '.png'];
+      const step = parseInt(img.dataset.fbStep || '0', 10);
+      if (step >= exts.length) {
+        img.onerror = null;
+        img.src = 'images/placeholder.svg';
+        return;
+      }
+      img.dataset.fbStep = step + 1;
+      img.src = img.src.replace(/\.[^.\/]+$/, exts[step]);
+    };
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -31,7 +44,7 @@
 
   <main>
     <section id="home" class="hero">
-      <img class="hero-image" src="images/hero.jpeg" alt="" aria-hidden="true" onerror="this.onerror=null;this.src='images/placeholder.svg';">
+      <img class="hero-image" src="images/hero.jpeg" alt="" aria-hidden="true" onerror="tryImageFallbacks(this)">
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="container hero-inner">
         <p class="eyebrow">Filmmaker &amp; Designer</p>
@@ -147,27 +160,27 @@
         <p class="placeholder-note">Placeholder tiles — replace files in <code>images/design/</code> with your real work. See README.md.</p>
         <div class="tile-grid">
           <a class="tile" href="images/design/01.jpg" target="_blank" rel="noopener">
-            <img src="images/design/01.jpg" alt="Graphic design project 1" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg';">
+            <img src="images/design/01.jpg" alt="Graphic design project 1" loading="lazy" onerror="tryImageFallbacks(this)">
             <span class="tile-label">Project 01 — Placeholder</span>
           </a>
           <a class="tile" href="images/design/02.jpg" target="_blank" rel="noopener">
-            <img src="images/design/02.jpg" alt="Graphic design project 2" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg';">
+            <img src="images/design/02.jpg" alt="Graphic design project 2" loading="lazy" onerror="tryImageFallbacks(this)">
             <span class="tile-label">Project 02 — Placeholder</span>
           </a>
           <a class="tile" href="images/design/03.jpg" target="_blank" rel="noopener">
-            <img src="images/design/03.jpg" alt="Graphic design project 3" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg';">
+            <img src="images/design/03.jpg" alt="Graphic design project 3" loading="lazy" onerror="tryImageFallbacks(this)">
             <span class="tile-label">Project 03 — Placeholder</span>
           </a>
           <a class="tile" href="images/design/04.jpg" target="_blank" rel="noopener">
-            <img src="images/design/04.jpg" alt="Graphic design project 4" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg';">
+            <img src="images/design/04.jpg" alt="Graphic design project 4" loading="lazy" onerror="tryImageFallbacks(this)">
             <span class="tile-label">Project 04 — Placeholder</span>
           </a>
           <a class="tile" href="images/design/05.jpg" target="_blank" rel="noopener">
-            <img src="images/design/05.jpg" alt="Graphic design project 5" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg';">
+            <img src="images/design/05.jpg" alt="Graphic design project 5" loading="lazy" onerror="tryImageFallbacks(this)">
             <span class="tile-label">Project 05 — Placeholder</span>
           </a>
           <a class="tile" href="images/design/06.jpg" target="_blank" rel="noopener">
-            <img src="images/design/06.jpg" alt="Graphic design project 6" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg';">
+            <img src="images/design/06.jpg" alt="Graphic design project 6" loading="lazy" onerror="tryImageFallbacks(this)">
             <span class="tile-label">Project 06 — Placeholder</span>
           </a>
         </div>
@@ -181,27 +194,27 @@
         <p class="placeholder-note">Placeholder tiles — replace files in <code>images/photography/</code> with your real photos. See README.md.</p>
         <div class="tile-grid">
           <a class="tile" href="images/photography/01.jpg" target="_blank" rel="noopener">
-            <img src="images/photography/01.jpg" alt="Photograph 1" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg';">
+            <img src="images/photography/01.jpg" alt="Photograph 1" loading="lazy" onerror="tryImageFallbacks(this)">
             <span class="tile-label">Photo 01 — Placeholder</span>
           </a>
           <a class="tile" href="images/photography/02.jpg" target="_blank" rel="noopener">
-            <img src="images/photography/02.jpg" alt="Photograph 2" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg';">
+            <img src="images/photography/02.jpg" alt="Photograph 2" loading="lazy" onerror="tryImageFallbacks(this)">
             <span class="tile-label">Photo 02 — Placeholder</span>
           </a>
           <a class="tile" href="images/photography/03.jpg" target="_blank" rel="noopener">
-            <img src="images/photography/03.jpg" alt="Photograph 3" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg';">
+            <img src="images/photography/03.jpg" alt="Photograph 3" loading="lazy" onerror="tryImageFallbacks(this)">
             <span class="tile-label">Photo 03 — Placeholder</span>
           </a>
           <a class="tile" href="images/photography/04.jpg" target="_blank" rel="noopener">
-            <img src="images/photography/04.jpg" alt="Photograph 4" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg';">
+            <img src="images/photography/04.jpg" alt="Photograph 4" loading="lazy" onerror="tryImageFallbacks(this)">
             <span class="tile-label">Photo 04 — Placeholder</span>
           </a>
           <a class="tile" href="images/photography/05.jpg" target="_blank" rel="noopener">
-            <img src="images/photography/05.jpg" alt="Photograph 5" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg';">
+            <img src="images/photography/05.jpg" alt="Photograph 5" loading="lazy" onerror="tryImageFallbacks(this)">
             <span class="tile-label">Photo 05 — Placeholder</span>
           </a>
           <a class="tile" href="images/photography/06.jpg" target="_blank" rel="noopener">
-            <img src="images/photography/06.jpg" alt="Photograph 6" loading="lazy" onerror="this.onerror=null;this.src='images/placeholder.svg';">
+            <img src="images/photography/06.jpg" alt="Photograph 6" loading="lazy" onerror="tryImageFallbacks(this)">
             <span class="tile-label">Photo 06 — Placeholder</span>
           </a>
         </div>
