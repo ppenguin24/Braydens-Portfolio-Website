@@ -1,0 +1,15 @@
+Drop your hero background photo in this folder, named exactly:
+
+    hero.jpg
+
+The page already points at this filename — no HTML editing needed.
+
+Tips:
+- Landscape orientation only.
+- Big is good: ~2400x1600 or larger looks best on desktop.
+- Photo sits behind the big "Brayden Moritz" name with a dark
+  overlay on top, so anything moody/cinematic works great.
+- If you want to use PNG instead of JPG, name it hero.png and
+  edit index.html (find "images/hero.jpg" and change to "images/hero.png").
+
+Once you drop hero.jpg in this folder, you can delete this .txt file.

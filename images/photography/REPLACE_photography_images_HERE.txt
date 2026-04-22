@@ -1,0 +1,19 @@
+Drop your photography images in this folder, named exactly:
+
+    01.jpg
+    02.jpg
+    03.jpg
+    04.jpg
+    05.jpg
+    06.jpg
+
+The page already points at these filenames — no HTML editing needed.
+
+Notes:
+- JPG is the default. For PNG, edit index.html and change the
+  extension on the matching <a href="..."> and <img src="...">.
+- Aspect ratio: tiles display 4:3, so landscape crops look cleanest.
+- To change the caption under a tile, edit the <span class="tile-label">
+  text in index.html.
+
+Once you've added your files, you can delete this .txt file.
