@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <script>
     window.tryImageFallbacks = function (img) {
-      const exts = ['.jpeg', '.jpg', '.png'];
+      const exts = ['.jpeg', '.jpg', '.png', '.JPEG', '.JPG', '.PNG'];
       const step = parseInt(img.dataset.fbStep || '0', 10);
       if (step >= exts.length) {
         img.onerror = null;
