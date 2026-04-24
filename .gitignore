@@ -13,3 +13,6 @@ images/films/*.mp4
 video/
 *.mov
 *.MOV
+
+# Source poster PDFs — we commit the rendered JPGs instead (much smaller).
+images/design/*.pdf
