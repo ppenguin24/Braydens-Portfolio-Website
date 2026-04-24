@@ -4,3 +4,12 @@ Thumbs.db
 .vscode/
 .idea/
 node_modules/
+
+# Raw/source video files — these belong on YouTube/Vimeo, not in the repo.
+# Cloudflare Pages has a 25 MB per-file limit, and git handles large binaries
+# poorly. If you drop a small compressed MP4 for web delivery, remove this rule
+# for that specific file.
+images/films/*.mp4
+video/
+*.mov
+*.MOV
