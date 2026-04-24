@@ -568,7 +568,7 @@ ul, ol { list-style: none; padding: 0; }
    ============================================================ */
 .view {
   position: relative;
-  padding: clamp(5rem, 12vw, 10rem) 0;
+  padding: clamp(3.5rem, 8.5vw, 7rem) 0;
   border-top: 1px solid var(--border);
 }
 .view-head {
@@ -757,6 +757,7 @@ ul, ol { list-style: none; padding: 0; }
   letter-spacing: 0.04em;
   color: var(--text-dim);
   justify-self: end;
+  transition: opacity 0.35s var(--ease), transform 0.45s var(--ease-out);
 }
 .reel-year {
   font-family: var(--font-display);
@@ -765,6 +766,15 @@ ul, ol { list-style: none; padding: 0; }
   color: var(--text-mute);
   min-width: 3ch;
   text-align: right;
+  transition: opacity 0.35s var(--ease), transform 0.45s var(--ease-out);
+}
+.reel-trigger:hover .reel-meta,
+.reel-trigger:focus-visible .reel-meta,
+.reel-trigger:hover .reel-year,
+.reel-trigger:focus-visible .reel-year {
+  opacity: 0;
+  transform: translateX(-14px);
+  pointer-events: none;
 }
 .reel-cue {
   position: absolute;
@@ -1131,8 +1141,33 @@ ul, ol { list-style: none; padding: 0; }
 /* ---------- Contact ---------- */
 .view-contact {
   text-align: left;
-  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-sink) 100%);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
 }
+.contact-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.contact-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.9) contrast(1.05) brightness(0.45);
+  transform: scale(1.04);
+}
+.contact-bg-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(70% 60% at 50% 55%, rgba(10,10,10,0.25) 0%, rgba(10,10,10,0.78) 75%, rgba(10,10,10,0.95) 100%),
+    linear-gradient(180deg, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0) 20%, rgba(10,10,10,0) 80%, rgba(10,10,10,0.9) 100%);
+}
+.view-contact > .container { position: relative; z-index: 1; }
 .contact-headline {
   font-family: var(--font-display);
   font-weight: 400;
