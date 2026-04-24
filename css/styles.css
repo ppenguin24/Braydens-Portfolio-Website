@@ -848,19 +848,6 @@ ul, ol { list-style: none; padding: 0; }
   opacity: 0.7;
   transition: opacity 0.4s var(--ease);
 }
-.tile-num {
-  position: absolute;
-  top: 1rem; left: 1rem;
-  font-size: 0.72rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--white);
-  background: rgba(10,10,10,0.45);
-  backdrop-filter: blur(6px);
-  padding: 0.3rem 0.55rem;
-  z-index: 2;
-  border: 1px solid rgba(239,235,228,0.18);
-}
 .tile:hover { border-color: rgba(239,235,228,0.35); }
 .tile:hover img { transform: scale(1.05); filter: grayscale(0) contrast(1.05); }
 .tile:hover::after { opacity: 0.3; }
