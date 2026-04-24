@@ -26,6 +26,30 @@
     });
   }
 
+  // ---------- Gallery show-more toggles ----------
+  document.querySelectorAll('.gallery-toggle').forEach((btn) => {
+    const targetId = btn.getAttribute('aria-controls');
+    const grid = targetId ? document.getElementById(targetId) : null;
+    if (!grid) return;
+    const labelEl = btn.querySelector('.gallery-toggle__label');
+    const countEl = btn.querySelector('.gallery-toggle__count');
+    const total = grid.querySelectorAll('.tile').length;
+    const visible = total - grid.querySelectorAll('.tile.is-extra').length;
+    const collapsedLabel = btn.dataset.collapsedLabel || 'Show more';
+    const expandedLabel = btn.dataset.expandedLabel || 'Show less';
+    btn.addEventListener('click', () => {
+      const expanded = grid.classList.toggle('is-expanded');
+      btn.setAttribute('aria-expanded', String(expanded));
+      if (labelEl) labelEl.textContent = expanded ? expandedLabel : collapsedLabel;
+      if (countEl) countEl.textContent = expanded ? `${total}  /  ${total}` : `${visible}  /  ${total}`;
+      if (!expanded) {
+        // scroll back up to the grid so the user isn't stranded below it
+        const top = grid.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
   // ---------- Tile link sync (design / photography) ----------
   document.querySelectorAll('a.tile img').forEach((img) => {
     const sync = () => {

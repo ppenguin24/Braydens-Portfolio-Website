@@ -400,7 +400,7 @@
           <h2 class="view-title">Stills</h2>
           <p class="view-sub">Frames from set and from the road.</p>
         </header>
-        <div class="tile-grid tile-grid--photo">
+        <div class="tile-grid tile-grid--photo" id="photography-grid">
           <a class="tile" href="images/photography/01.jpg" target="_blank" rel="noopener"><img src="images/photography/01.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
           <a class="tile" href="images/photography/02.jpg" target="_blank" rel="noopener"><img src="images/photography/02.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
           <a class="tile" href="images/photography/03.jpg" target="_blank" rel="noopener"><img src="images/photography/03.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
@@ -421,19 +421,25 @@
           <a class="tile" href="images/photography/18.jpg" target="_blank" rel="noopener"><img src="images/photography/18.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
           <a class="tile" href="images/photography/19.jpg" target="_blank" rel="noopener"><img src="images/photography/19.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
           <a class="tile" href="images/photography/20.jpg" target="_blank" rel="noopener"><img src="images/photography/20.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
-          <a class="tile" href="images/photography/21.jpg" target="_blank" rel="noopener"><img src="images/photography/21.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
-          <a class="tile" href="images/photography/22.jpg" target="_blank" rel="noopener"><img src="images/photography/22.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
-          <a class="tile" href="images/photography/23.jpg" target="_blank" rel="noopener"><img src="images/photography/23.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
-          <a class="tile" href="images/photography/24.jpg" target="_blank" rel="noopener"><img src="images/photography/24.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
-          <a class="tile" href="images/photography/25.jpg" target="_blank" rel="noopener"><img src="images/photography/25.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
-          <a class="tile" href="images/photography/26.jpg" target="_blank" rel="noopener"><img src="images/photography/26.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
-          <a class="tile" href="images/photography/27.jpg" target="_blank" rel="noopener"><img src="images/photography/27.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
-          <a class="tile" href="images/photography/28.jpg" target="_blank" rel="noopener"><img src="images/photography/28.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
-          <a class="tile" href="images/photography/29.jpg" target="_blank" rel="noopener"><img src="images/photography/29.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
-          <a class="tile" href="images/photography/30.jpg" target="_blank" rel="noopener"><img src="images/photography/30.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
-          <a class="tile" href="images/photography/31.jpg" target="_blank" rel="noopener"><img src="images/photography/31.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
-          <a class="tile" href="images/photography/32.jpg" target="_blank" rel="noopener"><img src="images/photography/32.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
+          <a class="tile is-extra" href="images/photography/21.jpg" target="_blank" rel="noopener"><img src="images/photography/21.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
+          <a class="tile is-extra" href="images/photography/22.jpg" target="_blank" rel="noopener"><img src="images/photography/22.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
+          <a class="tile is-extra" href="images/photography/23.jpg" target="_blank" rel="noopener"><img src="images/photography/23.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
+          <a class="tile is-extra" href="images/photography/24.jpg" target="_blank" rel="noopener"><img src="images/photography/24.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
+          <a class="tile is-extra" href="images/photography/25.jpg" target="_blank" rel="noopener"><img src="images/photography/25.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
+          <a class="tile is-extra" href="images/photography/26.jpg" target="_blank" rel="noopener"><img src="images/photography/26.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
+          <a class="tile is-extra" href="images/photography/27.jpg" target="_blank" rel="noopener"><img src="images/photography/27.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
+          <a class="tile is-extra" href="images/photography/28.jpg" target="_blank" rel="noopener"><img src="images/photography/28.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
+          <a class="tile is-extra" href="images/photography/29.jpg" target="_blank" rel="noopener"><img src="images/photography/29.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
+          <a class="tile is-extra" href="images/photography/30.jpg" target="_blank" rel="noopener"><img src="images/photography/30.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
+          <a class="tile is-extra" href="images/photography/31.jpg" target="_blank" rel="noopener"><img src="images/photography/31.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
+          <a class="tile is-extra" href="images/photography/32.jpg" target="_blank" rel="noopener"><img src="images/photography/32.jpg" alt="" loading="lazy" onerror="tryImageFallbacks(this)"></a>
         </div>
+        <button class="gallery-toggle" type="button" aria-controls="photography-grid" aria-expanded="false"
+                data-collapsed-label="Show 12 more" data-expanded-label="Show less">
+          <span class="gallery-toggle__line" aria-hidden="true"></span>
+          <span class="gallery-toggle__label">Show 12 more</span>
+          <span class="gallery-toggle__count" aria-hidden="true">20 &#8202;/&#8202; 32</span>
+        </button>
       </div>
     </section>
 
