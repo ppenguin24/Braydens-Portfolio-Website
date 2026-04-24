@@ -1,9 +1,25 @@
-# Brayden Moritz — Portfolio Site
+# Brayden Moritz — Cinematographer Portfolio
 
-A single-page static portfolio built with plain HTML, CSS, and a tiny bit of vanilla JavaScript. No frameworks, no build step. Deployed on Cloudflare Pages (auto-redeploys on every push to GitHub).
+A single-page static portfolio built with plain HTML, CSS, and vanilla JavaScript. No frameworks, no build step. Deployed on Cloudflare Pages (auto-redeploys on every push to `main`).
 
 **Live:** https://braydens-portfolio-website.pages.dev
 **Repo:** https://github.com/ppenguin24/Braydens-Portfolio-Website
+
+---
+
+## Layout
+
+The site is organized around a **radial project selector** on the hero, plus scrollable sections below.
+
+- **Stage (hero)** — 6 featured works arranged around a ring. Hover a spoke to preview its poster behind; click to play it in a modal.
+- **About** — bio and meta (based, works, since).
+- **Films** — full short-film list (includes the three on the radial plus any others).
+- **Travel** — full travel-film list.
+- **Design** — tile grid of graphic design.
+- **Photography** — tile grid of stills.
+- **Contact** — email and social links.
+
+The radial is desktop-only. On mobile it collapses into a vertical list of the same 6 projects.
 
 ---
 
@@ -11,81 +27,106 @@ A single-page static portfolio built with plain HTML, CSS, and a tiny bit of van
 
 ```
 .
-├── index.html              # All page content (edit text + links here)
+├── index.html              # All page content (sections, radial spokes, reel items)
 ├── css/
-│   └── styles.css          # All styling (colors, layout, fonts)
+│   └── styles.css          # All styling (tokens, radial geometry, views, modal)
 ├── js/
-│   └── main.js             # Mobile menu, footer year, tile link sync
+│   └── main.js             # Radial preview, video modal, mobile nav, custom cursor
 ├── images/
-│   ├── placeholder.svg     # Fallback shown when a real image is missing
-│   ├── hero.jpeg           # Hero background photo
-│   ├── design/             # 3 tiles: 01.jpeg, 02.png, 03.jpeg
-│   └── photography/        # 4 tiles: 01.jpg, 02.jpeg, 03.jpg, 04.jpeg
+│   ├── placeholder.svg     # Fallback shown when an image path 404s
+│   ├── hero.jpeg           # Stage background poster
+│   ├── design/             # 01.jpeg, 02.png, 03.jpeg
+│   └── photography/        # 01.jpg, 02.jpeg, 03.jpg, 04.jpeg
 └── README.md
 ```
 
 ---
 
-## Preview the site locally
+## Preview locally
 
 ```bash
 cd "~/Desktop/Braydens Portfolio Website"
 python3 -m http.server 8000
 ```
 
-Then open [http://localhost:8000](http://localhost:8000). Stop with `Ctrl+C`.
+Open [http://localhost:8000](http://localhost:8000). Stop with `Ctrl+C`.
 
 ---
 
-## How to update content
+## How to edit
 
-### Change the headline, tagline, or bio
-Open `index.html`. Edit text inside `<section id="home">` (hero) or `<section id="about">` (bio).
+### Change a radial spoke (the 6 featured works)
 
-### Replace the hero background image
-Save a landscape JPEG at `images/hero.jpeg` (any size; ~2400px wide recommended). If you use a different extension, also update `src="images/hero.jpeg"` in `index.html`.
+Open `index.html`, find the `<ul class="radial-items">` block. Each spoke is a `<li class="radial-item" style="--i:N">` where `N` is 0–5 (position around the ring, starting at top, clockwise).
 
-### Add or swap Short Films / Travel Videos
-1. Grab the video's ID (the part after `v=` in the YouTube URL).
-2. In `index.html`, find `<section id="short-films">` or `<section id="travel">`.
-3. Copy an existing `<article class="video-card">` block; paste a new one.
-4. Replace the ID in `src="https://www.youtube-nocookie.com/embed/ID_HERE"`.
-5. Update the `<h3 class="card-title">` and `<p class="card-meta">` text.
+```html
+<li class="radial-item" style="--i:0">
+  <button class="spoke" type="button"
+          data-video="xKcxjtx9H4Y"
+          data-title="Rebuke"
+          data-meta="Cinematic Short Film · 1st Place Award"
+          data-year="2024"
+          data-kind="Film">
+    <span class="spoke-dot" aria-hidden="true"></span>
+    <span class="spoke-label">
+      <span class="spoke-num">01</span>
+      <span class="spoke-name">Rebuke</span>
+    </span>
+  </button>
+</li>
+```
 
-### Replace Graphic Design / Photography tiles
-The HTML currently points directly at the real filenames. Two ways to swap:
+- `data-video` — YouTube ID (the part after `v=`)
+- `data-title`, `data-meta`, `data-year`, `data-kind` — shown in the ring center on hover, and in the modal on click
+- `spoke-num` / `spoke-name` — small label printed next to the dot on the ring
 
-**Easiest — keep the same filename and extension:**
-- Overwrite the file in place (e.g. drop a new file at `images/design/02.png` replacing the old one).
+To reorder or swap, change the `--i` values (0 = top, 1 = upper-right, 2 = lower-right, 3 = bottom, 4 = lower-left, 5 = upper-left) and/or change the `data-video` + name.
 
-**Change the extension or add a new tile:**
-1. Drop your new file in `images/design/` or `images/photography/`.
-2. Open `index.html` and update both `src="..."` and `href="..."` on that tile's `<a class="tile">` block to match the new filename.
-3. Safety net: the JS in `<head>` of `index.html` tries `.jpeg`, `.jpg`, `.png` (and uppercase) automatically if the initial path 404s, so mistakes generally still load.
+### Add or edit a film/travel entry (the reel lists)
 
-### Add more tiles (each section currently has 3 design / 4 photo)
-Copy an existing `<a class="tile">` block and paste below it. Update the filename.
+Same pattern, under `<section id="films">` or `<section id="travel">`. Copy a `<li class="reel-item">` block and update:
 
-### Change colors, fonts, or spacing
+```html
+<button class="reel-trigger" type="button" data-video="ID_HERE" data-title="Title" data-meta="Subtitle">
+  <span class="reel-num">06</span>
+  <span class="reel-title">Title</span>
+  <span class="reel-meta">Subtitle</span>
+  <span class="reel-year">2026</span>
+  <span class="reel-cue" aria-hidden="true">Play</span>
+</button>
+```
+
+### Replace Design / Photography tiles
+
+Drop a file in `images/design/` or `images/photography/`. Either keep the same filename (overwrites) or update both `src="..."` and `href="..."` on that tile's `<a class="tile">`. The fallback script in `<head>` tries `.jpeg / .jpg / .png` (+ uppercase) if the initial path 404s.
+
+### Change colors, fonts, or radial size
+
 Edit the `:root { ... }` block at the top of `css/styles.css`:
 
 ```css
---accent-green: #2BD27B;
---accent-blue: #4DA8FF;
---bg: #0B0F0D;
+--bg:          #0A0A0A;
+--text:        #EFEBE4;
+--text-dim:    #B8B4AD;
+--text-mute:   #6F6B65;
+--radial-size: min(78vh, 640px);
 ```
 
-### Update contact / social links
+### Hero background image
+
+Save a landscape JPEG at `images/hero.jpeg` (roughly 2400px wide). The stage applies a grayscale + darken filter in CSS, so high-contrast frames work best. On hover over a radial spoke, the poster swaps to that YouTube video's thumbnail automatically.
+
+### Contact / social
+
 Edit the `<section id="contact">` block in `index.html`.
 
 ---
 
-## Deploying updates
+## Deploying
 
 Every push to `main` triggers a Cloudflare rebuild (usually live in under a minute).
 
 ```bash
-cd "~/Desktop/Braydens Portfolio Website"
 git add .
 git commit -m "Describe what changed"
 git push
@@ -95,9 +136,9 @@ git push
 
 ## Troubleshooting
 
-- **Image shows the wrong picture** — likely a CDN cache ghost. If you renamed a file recently, the old path may still be cached at Cloudflare's edge or in your browser. Fixes: (a) bump the filename to something new, or (b) open an incognito window to confirm, or (c) purge cache from Cloudflare dashboard.
-- **Image not showing at all** — check case: `01.JPG` is different from `01.jpg` on the server. Prefer lowercase extensions.
-- **Change didn't appear** — hard refresh (`Cmd+Shift+R`). If still missing, check the Cloudflare Pages deploy log for errors.
-- **Push rejected** — `git pull --rebase` then `git push` again.
-- **YouTube embed blank** — confirm the video isn't set to private or "embedding disabled" in YouTube Studio.
-- **Large image file** — Cloudflare Pages free tier limits per-file size. Keep images under ~5 MB; compress at squoosh.app before dropping in.
+- **Wrong image shows** — likely a CDN cache ghost. Renaming the file is the reliable fix; incognito window confirms.
+- **Image not showing** — check case: `01.JPG` ≠ `01.jpg` on the server. Prefer lowercase.
+- **Radial looks crowded / labels overlap** — lower `--radial-size` or shorten spoke names.
+- **Change didn't appear** — hard refresh (`Cmd+Shift+R`). Still missing? Check the Cloudflare Pages deploy log.
+- **Push rejected** — `git pull --rebase` then `git push`.
+- **YouTube embed blank** — video must allow embedding in YouTube Studio.

@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Brayden Moritz — Filmmaker & Designer. Telling stories through film and visual design.">
-  <meta name="theme-color" content="#0B0F0D">
-  <title>Brayden Moritz — Filmmaker &amp; Designer</title>
+  <meta name="description" content="Brayden Moritz — Cinematographer and filmmaker. Selected short films, travel films, design, and photography.">
+  <meta name="theme-color" content="#0A0A0A">
+  <title>Brayden Moritz — Cinematographer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <script>
     window.tryImageFallbacks = function (img) {
@@ -25,184 +25,367 @@
   </script>
 </head>
 <body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"><span></span></div>
+
   <header class="site-header">
-    <nav class="nav container" aria-label="Primary">
-      <a href="#home" class="nav-brand">Brayden Moritz</a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#short-films">Short Films</a></li>
-        <li><a href="#travel">Travel</a></li>
-        <li><a href="#design">Design</a></li>
-        <li><a href="#photography">Photography</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <a href="#home" class="brand" aria-label="Home — Brayden Moritz">
+      <span class="brand-mark">BM</span>
+      <span class="brand-sep">/</span>
+      <span class="brand-role">Cinematographer</span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#films">Films</a>
+      <a href="#travel">Travel</a>
+      <a href="#design">Design</a>
+      <a href="#photography">Photography</a>
+      <a href="#contact">Contact</a>
     </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+      <span></span><span></span>
+    </button>
   </header>
 
+  <nav id="mobile-nav" class="mobile-nav" aria-hidden="true">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#films">Films</a></li>
+      <li><a href="#travel">Travel</a></li>
+      <li><a href="#design">Design</a></li>
+      <li><a href="#photography">Photography</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
   <main>
-    <section id="home" class="hero">
-      <img class="hero-image" src="images/hero.jpeg" alt="" aria-hidden="true" onerror="tryImageFallbacks(this)">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="container hero-inner">
-        <p class="eyebrow">Filmmaker &amp; Designer</p>
-        <h1 class="hero-title">Brayden Moritz</h1>
-        <p class="hero-tagline">Telling stories through film and visual design.</p>
-        <div class="hero-cta">
-          <a href="#short-films" class="btn btn-primary">See the work</a>
-          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+    <section id="home" class="stage" aria-label="Featured projects">
+      <div class="stage-bg">
+        <img class="stage-poster" id="stage-poster-a" src="images/hero.jpeg" alt="" aria-hidden="true" onerror="tryImageFallbacks(this)">
+        <img class="stage-poster is-next" id="stage-poster-b" src="" alt="" aria-hidden="true">
+        <div class="stage-shade"></div>
+      </div>
+
+      <div class="stage-lead">
+        <p class="eyebrow">Cinematographer &middot; Filmmaker</p>
+        <h1 class="stage-title">Brayden<br><em>Moritz</em></h1>
+        <p class="stage-caption">A selection of narrative, action, and travel films.<br>Orbit to preview — select to play.</p>
+      </div>
+
+      <div class="radial" role="group" aria-label="Featured project selector">
+        <svg class="radial-text" viewBox="0 0 400 400" aria-hidden="true">
+          <defs>
+            <path id="radial-curve" d="M 200,200 m -170,0 a 170,170 0 1,1 340,0 a 170,170 0 1,1 -340,0"/>
+          </defs>
+          <text>
+            <textPath href="#radial-curve" startOffset="0">SELECTED&nbsp;WORKS &middot; 2023 — 2026 &middot; CINEMATOGRAPHY &middot; SELECTED&nbsp;WORKS &middot; 2023 — 2026 &middot; CINEMATOGRAPHY &middot;</textPath>
+          </text>
+        </svg>
+
+        <div class="radial-ring" aria-hidden="true"></div>
+        <div class="radial-tick" aria-hidden="true"></div>
+
+        <ul class="radial-items" role="list">
+          <li class="radial-item" style="--i:0">
+            <button class="spoke" type="button"
+                    data-video="xKcxjtx9H4Y"
+                    data-title="Rebuke"
+                    data-meta="Cinematic Short Film &middot; 1st Place Award"
+                    data-year="2024"
+                    data-kind="Film">
+              <span class="spoke-dot" aria-hidden="true"></span>
+              <span class="spoke-label">
+                <span class="spoke-num">01</span>
+                <span class="spoke-name">Rebuke</span>
+              </span>
+            </button>
+          </li>
+          <li class="radial-item" style="--i:1">
+            <button class="spoke" type="button"
+                    data-video="oRaiRIfCsOQ"
+                    data-title="Lovestruck"
+                    data-meta="Action Short Film"
+                    data-year="2024"
+                    data-kind="Film">
+              <span class="spoke-dot" aria-hidden="true"></span>
+              <span class="spoke-label">
+                <span class="spoke-num">02</span>
+                <span class="spoke-name">Lovestruck</span>
+              </span>
+            </button>
+          </li>
+          <li class="radial-item" style="--i:2">
+            <button class="spoke" type="button"
+                    data-video="a--YX6XG6v0"
+                    data-title="Kranked"
+                    data-meta="48-Hour Stunt Short Film"
+                    data-year="2024"
+                    data-kind="Film">
+              <span class="spoke-dot" aria-hidden="true"></span>
+              <span class="spoke-label">
+                <span class="spoke-num">03</span>
+                <span class="spoke-name">Kranked</span>
+              </span>
+            </button>
+          </li>
+          <li class="radial-item" style="--i:3">
+            <button class="spoke" type="button"
+                    data-video="iVxt1kwJsTo"
+                    data-title="Last of the Living"
+                    data-meta="Post-Apocalyptic Short Film"
+                    data-year="2023"
+                    data-kind="Film">
+              <span class="spoke-dot" aria-hidden="true"></span>
+              <span class="spoke-label">
+                <span class="spoke-num">04</span>
+                <span class="spoke-name">Last of the Living</span>
+              </span>
+            </button>
+          </li>
+          <li class="radial-item" style="--i:4">
+            <button class="spoke" type="button"
+                    data-video="aP0CYlBwAPc"
+                    data-title="The Chase"
+                    data-meta="Cinematic Surf Trip"
+                    data-year="2025"
+                    data-kind="Travel">
+              <span class="spoke-dot" aria-hidden="true"></span>
+              <span class="spoke-label">
+                <span class="spoke-num">05</span>
+                <span class="spoke-name">The Chase</span>
+              </span>
+            </button>
+          </li>
+          <li class="radial-item" style="--i:5">
+            <button class="spoke" type="button"
+                    data-video="7Btivwlx4h8"
+                    data-title="Tallest Trees"
+                    data-meta="Climbing the Tallest Trees &middot; The Bush"
+                    data-year="2024"
+                    data-kind="Travel">
+              <span class="spoke-dot" aria-hidden="true"></span>
+              <span class="spoke-label">
+                <span class="spoke-num">06</span>
+                <span class="spoke-name">Tallest Trees</span>
+              </span>
+            </button>
+          </li>
+        </ul>
+
+        <div class="radial-center" aria-live="polite">
+          <p class="radial-hint">Select a project</p>
+          <p class="radial-kind"></p>
+          <p class="radial-title"></p>
+          <p class="radial-meta"></p>
+          <p class="radial-year"></p>
         </div>
       </div>
-      <a href="#about" class="scroll-hint" aria-label="Scroll down">
-        <span></span>
-      </a>
-    </section>
 
-    <section id="about" class="section">
-      <div class="container about-grid">
-        <div>
-          <p class="section-eyebrow">About</p>
-          <h2 class="section-title">Stories that feel alive.</h2>
-        </div>
-        <p class="bio">
-          My mission is to tell stories that feel alive — stories that move people, stir wonder, and remind them the world is bigger than what they see every day. I'm a visual storyteller and an adventurer at heart, driven by the belief that media is a powerful medium to shape how people see the world.
-        </p>
+      <div class="stage-foot">
+        <a href="#about" class="scroll-link">
+          <span class="scroll-line"></span>
+          <span>Scroll</span>
+        </a>
+        <p class="stage-marker">Available for commissions &middot; Worldwide</p>
       </div>
     </section>
 
-    <section id="short-films" class="section section-alt">
+    <section id="about" class="view view-about">
       <div class="container">
-        <p class="section-eyebrow">Selected work</p>
-        <h2 class="section-title">Short Films</h2>
-        <div class="video-grid">
-          <article class="video-card">
-            <div class="video-embed">
-              <iframe src="https://www.youtube-nocookie.com/embed/xKcxjtx9H4Y" title="REBUKE" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
-            </div>
-            <h3 class="card-title">REBUKE</h3>
-            <p class="card-meta">1st Place Award-Winning Cinematic Short Film</p>
-          </article>
-          <article class="video-card">
-            <div class="video-embed">
-              <iframe src="https://www.youtube-nocookie.com/embed/oRaiRIfCsOQ" title="LOVESTRUCK" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
-            </div>
-            <h3 class="card-title">LOVESTRUCK</h3>
-            <p class="card-meta">Action Short Film</p>
-          </article>
-          <article class="video-card">
-            <div class="video-embed">
-              <iframe src="https://www.youtube-nocookie.com/embed/a--YX6XG6v0" title="KRANKED" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
-            </div>
-            <h3 class="card-title">KRANKED</h3>
-            <p class="card-meta">48-Hour Stunt Short Film</p>
-          </article>
-          <article class="video-card">
-            <div class="video-embed">
-              <iframe src="https://www.youtube-nocookie.com/embed/iVxt1kwJsTo" title="LAST OF THE LIVING" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
-            </div>
-            <h3 class="card-title">LAST OF THE LIVING</h3>
-            <p class="card-meta">Post-Apocalyptic Short Film</p>
-          </article>
-          <article class="video-card">
-            <div class="video-embed">
-              <iframe src="https://www.youtube-nocookie.com/embed/UEDnNNgrPW4" title="Chad Sterling and the Lost Diamond" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
-            </div>
-            <h3 class="card-title">CHAD STERLING AND THE LOST DIAMOND</h3>
-            <p class="card-meta">LEGO Film</p>
-          </article>
+        <p class="section-eyebrow">About &middot; 01</p>
+        <div class="about-layout">
+          <h2 class="statement">
+            <span>Stories</span> that feel alive &mdash; <em>stories</em> that move people,
+            stir wonder, and remind them the world is bigger than what they see every day.
+          </h2>
+          <div class="about-col">
+            <p class="bio">
+              I'm a visual storyteller and an adventurer at heart, driven by the belief that
+              film is a powerful medium to shape how people see the world. My work moves
+              between narrative short film, action, and documentary travel &mdash; always
+              chasing light, pace, and a feeling.
+            </p>
+            <dl class="about-meta">
+              <div><dt>Based</dt><dd>Pacific Northwest</dd></div>
+              <div><dt>Works</dt><dd>Narrative &middot; Action &middot; Documentary</dd></div>
+              <div><dt>Since</dt><dd>2020</dd></div>
+            </dl>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="travel" class="section">
+    <section id="films" class="view view-films">
       <div class="container">
-        <p class="section-eyebrow">From the road</p>
-        <h2 class="section-title">Travel Videos</h2>
-        <div class="video-grid">
-          <article class="video-card">
-            <div class="video-embed">
-              <iframe src="https://www.youtube-nocookie.com/embed/aP0CYlBwAPc" title="THE CHASE — A Cinematic Surf Trip" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
-            </div>
-            <h3 class="card-title">THE CHASE</h3>
-            <p class="card-meta">A Cinematic Surf Trip</p>
-          </article>
-          <article class="video-card">
-            <div class="video-embed">
-              <iframe src="https://www.youtube-nocookie.com/embed/7Btivwlx4h8" title="Climbing the Tallest Trees in the World" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
-            </div>
-            <h3 class="card-title">Climbing the Tallest Trees in the World</h3>
-            <p class="card-meta">The Bush</p>
-          </article>
-          <article class="video-card">
-            <div class="video-embed">
-              <iframe src="https://www.youtube-nocookie.com/embed/TXdo8Xw_-fE" title="Uncaged — The Bush Channel Intro" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
-            </div>
-            <h3 class="card-title">UNCAGED</h3>
-            <p class="card-meta">The Bush — Channel Intro</p>
-          </article>
-          <article class="video-card">
-            <div class="video-embed">
-              <iframe src="https://www.youtube-nocookie.com/embed/3-6fI8sDgh0" title="Motorbikes in Papua New Guinea" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
-            </div>
-            <h3 class="card-title">Motorbikes in Papua New Guinea</h3>
-            <p class="card-meta">The Bush</p>
-          </article>
-        </div>
+        <header class="view-head">
+          <p class="section-eyebrow">Films &middot; 02</p>
+          <h2 class="view-title">Short Films</h2>
+          <p class="view-sub">Narrative and action work, 2023&mdash;present.</p>
+        </header>
+        <ol class="reel-list">
+          <li class="reel-item">
+            <button class="reel-trigger" type="button" data-video="xKcxjtx9H4Y" data-title="Rebuke" data-meta="Cinematic Short Film &middot; 1st Place Award">
+              <span class="reel-num">01</span>
+              <span class="reel-title">Rebuke</span>
+              <span class="reel-meta">Cinematic &middot; Award Winner</span>
+              <span class="reel-year">2024</span>
+              <span class="reel-cue" aria-hidden="true">Play</span>
+            </button>
+          </li>
+          <li class="reel-item">
+            <button class="reel-trigger" type="button" data-video="oRaiRIfCsOQ" data-title="Lovestruck" data-meta="Action Short Film">
+              <span class="reel-num">02</span>
+              <span class="reel-title">Lovestruck</span>
+              <span class="reel-meta">Action</span>
+              <span class="reel-year">2024</span>
+              <span class="reel-cue" aria-hidden="true">Play</span>
+            </button>
+          </li>
+          <li class="reel-item">
+            <button class="reel-trigger" type="button" data-video="a--YX6XG6v0" data-title="Kranked" data-meta="48-Hour Stunt Short Film">
+              <span class="reel-num">03</span>
+              <span class="reel-title">Kranked</span>
+              <span class="reel-meta">48-Hour Stunt</span>
+              <span class="reel-year">2024</span>
+              <span class="reel-cue" aria-hidden="true">Play</span>
+            </button>
+          </li>
+          <li class="reel-item">
+            <button class="reel-trigger" type="button" data-video="iVxt1kwJsTo" data-title="Last of the Living" data-meta="Post-Apocalyptic Short Film">
+              <span class="reel-num">04</span>
+              <span class="reel-title">Last of the Living</span>
+              <span class="reel-meta">Post-Apocalyptic</span>
+              <span class="reel-year">2023</span>
+              <span class="reel-cue" aria-hidden="true">Play</span>
+            </button>
+          </li>
+          <li class="reel-item">
+            <button class="reel-trigger" type="button" data-video="UEDnNNgrPW4" data-title="Chad Sterling and the Lost Diamond" data-meta="LEGO Film">
+              <span class="reel-num">05</span>
+              <span class="reel-title">Chad Sterling &amp; the Lost Diamond</span>
+              <span class="reel-meta">LEGO Film</span>
+              <span class="reel-year">2022</span>
+              <span class="reel-cue" aria-hidden="true">Play</span>
+            </button>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <section id="design" class="section section-alt">
+    <section id="travel" class="view view-travel">
       <div class="container">
-        <p class="section-eyebrow">Visual identity</p>
-        <h2 class="section-title">Graphic Design</h2>
+        <header class="view-head">
+          <p class="section-eyebrow">Travel &middot; 03</p>
+          <h2 class="view-title">From the Road</h2>
+          <p class="view-sub">Documentary and cinematic travel films.</p>
+        </header>
+        <ol class="reel-list">
+          <li class="reel-item">
+            <button class="reel-trigger" type="button" data-video="aP0CYlBwAPc" data-title="The Chase" data-meta="A Cinematic Surf Trip">
+              <span class="reel-num">01</span>
+              <span class="reel-title">The Chase</span>
+              <span class="reel-meta">Cinematic Surf Trip</span>
+              <span class="reel-year">2025</span>
+              <span class="reel-cue" aria-hidden="true">Play</span>
+            </button>
+          </li>
+          <li class="reel-item">
+            <button class="reel-trigger" type="button" data-video="7Btivwlx4h8" data-title="Tallest Trees in the World" data-meta="The Bush">
+              <span class="reel-num">02</span>
+              <span class="reel-title">Climbing the Tallest Trees</span>
+              <span class="reel-meta">The Bush</span>
+              <span class="reel-year">2024</span>
+              <span class="reel-cue" aria-hidden="true">Play</span>
+            </button>
+          </li>
+          <li class="reel-item">
+            <button class="reel-trigger" type="button" data-video="TXdo8Xw_-fE" data-title="Uncaged" data-meta="The Bush &middot; Channel Intro">
+              <span class="reel-num">03</span>
+              <span class="reel-title">Uncaged</span>
+              <span class="reel-meta">Channel Intro &middot; The Bush</span>
+              <span class="reel-year">2023</span>
+              <span class="reel-cue" aria-hidden="true">Play</span>
+            </button>
+          </li>
+          <li class="reel-item">
+            <button class="reel-trigger" type="button" data-video="3-6fI8sDgh0" data-title="Motorbikes in Papua New Guinea" data-meta="The Bush">
+              <span class="reel-num">04</span>
+              <span class="reel-title">Motorbikes in Papua New Guinea</span>
+              <span class="reel-meta">The Bush</span>
+              <span class="reel-year">2024</span>
+              <span class="reel-cue" aria-hidden="true">Play</span>
+            </button>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="design" class="view view-design">
+      <div class="container">
+        <header class="view-head">
+          <p class="section-eyebrow">Design &middot; 04</p>
+          <h2 class="view-title">Graphic Design</h2>
+          <p class="view-sub">Posters, identity, and title treatments.</p>
+        </header>
         <div class="tile-grid">
           <a class="tile" href="images/design/01.jpeg" target="_blank" rel="noopener">
             <img src="images/design/01.jpeg" alt="Graphic design project 1" loading="lazy" onerror="tryImageFallbacks(this)">
+            <span class="tile-num">01</span>
           </a>
           <a class="tile" href="images/design/02.png" target="_blank" rel="noopener">
             <img src="images/design/02.png" alt="Graphic design project 2" loading="lazy" onerror="tryImageFallbacks(this)">
+            <span class="tile-num">02</span>
           </a>
           <a class="tile" href="images/design/03.jpeg" target="_blank" rel="noopener">
             <img src="images/design/03.jpeg" alt="Graphic design project 3" loading="lazy" onerror="tryImageFallbacks(this)">
+            <span class="tile-num">03</span>
           </a>
         </div>
       </div>
     </section>
 
-    <section id="photography" class="section">
+    <section id="photography" class="view view-photo">
       <div class="container">
-        <p class="section-eyebrow">Stills</p>
-        <h2 class="section-title">Photography</h2>
-        <div class="tile-grid">
+        <header class="view-head">
+          <p class="section-eyebrow">Photography &middot; 05</p>
+          <h2 class="view-title">Stills</h2>
+          <p class="view-sub">Frames from set and from the road.</p>
+        </header>
+        <div class="tile-grid tile-grid--photo">
           <a class="tile" href="images/photography/01.jpg" target="_blank" rel="noopener">
             <img src="images/photography/01.jpg" alt="Photograph 1" loading="lazy" onerror="tryImageFallbacks(this)">
+            <span class="tile-num">01</span>
           </a>
           <a class="tile" href="images/photography/02.jpeg" target="_blank" rel="noopener">
             <img src="images/photography/02.jpeg" alt="Photograph 2" loading="lazy" onerror="tryImageFallbacks(this)">
+            <span class="tile-num">02</span>
           </a>
           <a class="tile" href="images/photography/03.jpg" target="_blank" rel="noopener">
             <img src="images/photography/03.jpg" alt="Photograph 3" loading="lazy" onerror="tryImageFallbacks(this)">
+            <span class="tile-num">03</span>
           </a>
           <a class="tile" href="images/photography/04.jpeg" target="_blank" rel="noopener">
             <img src="images/photography/04.jpeg" alt="Photograph 4" loading="lazy" onerror="tryImageFallbacks(this)">
+            <span class="tile-num">04</span>
           </a>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section section-contact">
+    <section id="contact" class="view view-contact">
       <div class="container">
-        <p class="section-eyebrow">Get in touch</p>
-        <h2 class="section-title">Let's make something.</h2>
-        <p class="contact-line">For projects, collaborations, or a hello:</p>
-        <a class="contact-email" href="mailto:braypngmk3@gmail.com">braypngmk3@gmail.com</a>
+        <p class="section-eyebrow">Contact &middot; 06</p>
+        <h2 class="contact-headline">Let's make <em>something</em>.</h2>
+        <p class="contact-line">For projects, collaborations, or a hello.</p>
+        <a class="contact-email" href="mailto:braypngmk3@gmail.com">
+          <span>braypngmk3@gmail.com</span>
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
         <ul class="social-links">
-          <li><a href="https://www.youtube.com/@BudgetCutsFilms" target="_blank" rel="noopener">Budget Cuts Films</a></li>
-          <li><a href="https://www.youtube.com/@thebushofficial" target="_blank" rel="noopener">The Bush</a></li>
-          <li><a href="https://www.instagram.com/brayden_moritz/" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="https://www.linkedin.com/in/brayden-moritz-00321b2b1/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/@BudgetCutsFilms" target="_blank" rel="noopener"><span>Budget Cuts Films</span><em>YouTube</em></a></li>
+          <li><a href="https://www.youtube.com/@thebushofficial" target="_blank" rel="noopener"><span>The Bush</span><em>YouTube</em></a></li>
+          <li><a href="https://www.instagram.com/brayden_moritz/" target="_blank" rel="noopener"><span>@brayden_moritz</span><em>Instagram</em></a></li>
+          <li><a href="https://www.linkedin.com/in/brayden-moritz-00321b2b1/" target="_blank" rel="noopener"><span>Brayden Moritz</span><em>LinkedIn</em></a></li>
         </ul>
       </div>
     </section>
@@ -210,10 +393,30 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>&copy; <span id="year">2026</span> Brayden Moritz. All rights reserved.</p>
-      <a href="#home" class="back-top">Back to top</a>
+      <p class="copy">&copy; <span id="year">2026</span> Brayden Moritz &middot; All rights reserved</p>
+      <p class="colophon">Built in silence &middot; No frameworks</p>
+      <a href="#home" class="back-top">
+        <span>Back to top</span>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+      </a>
     </div>
   </footer>
+
+  <div class="video-modal" id="video-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="video-modal-title">
+    <button class="modal-close" type="button" aria-label="Close video">
+      <span></span><span></span>
+    </button>
+    <div class="modal-inner">
+      <div class="modal-head">
+        <p class="modal-eyebrow">Now Playing</p>
+        <h3 class="modal-title" id="video-modal-title">&nbsp;</h3>
+        <p class="modal-meta">&nbsp;</p>
+      </div>
+      <div class="modal-frame">
+        <div class="modal-embed" id="modal-embed"></div>
+      </div>
+    </div>
+  </div>
 
   <script src="js/main.js" defer></script>
 </body>
