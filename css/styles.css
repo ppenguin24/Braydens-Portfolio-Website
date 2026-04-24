@@ -1273,7 +1273,6 @@ ul, ol { list-style: none; padding: 0; }
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
-.colophon { opacity: 0.6; }
 .back-top {
   display: inline-flex;
   align-items: center;
