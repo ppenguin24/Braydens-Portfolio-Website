@@ -825,10 +825,6 @@ ul, ol { list-style: none; padding: 0; }
   .tile-grid--design { grid-template-columns: repeat(4, 1fr); }
 }
 .tile-grid--design .tile { aspect-ratio: 2 / 3; }
-/* Non-poster design tiles (logos / graphics) — contain instead of cover so text doesn't get cropped */
-.tile-grid--design .tile:nth-child(n+5) img { object-fit: contain; padding: 1.25rem; }
-.tile-grid--design .tile:nth-child(n+5) { background: var(--bg); }
-.tile-grid--design .tile:nth-child(n+5):hover img { transform: scale(1.03); }
 .tile {
   position: relative;
   display: block;
