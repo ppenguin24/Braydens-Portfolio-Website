@@ -1073,21 +1073,27 @@ ul, ol { list-style: none; padding: 0; }
 .social-links__brand a {
   align-items: center;
 }
+.social-links__brand .social-brand-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-style: italic;
+}
 .social-brand-mark {
   height: 1.9rem;
   width: auto;
-  margin-left: 1rem;
   opacity: 0.95;
   transition: opacity 0.3s var(--ease), transform 0.5s var(--ease-out);
   flex-shrink: 0;
 }
 .social-links__brand a:hover .social-brand-mark {
   opacity: 1;
-  transform: translateX(4px);
+  transform: translateX(3px);
 }
 @media (max-width: 520px) {
   .social-links__brand a { flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; }
-  .social-brand-mark { height: 1.6rem; margin-left: auto; }
+  .social-brand-mark { height: 1.6rem; }
+  .social-links__brand .social-brand-row { gap: 0.75rem; }
 }
 
 /* ---------- Footer ---------- */
