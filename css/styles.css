@@ -867,13 +867,15 @@ ul, ol { list-style: none; padding: 0; }
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(3.2rem, 6.5vw, 5rem);
+  font-size: clamp(2.8rem, 5.2vw, 4.25rem);
   line-height: 0.9;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   color: var(--white);
   display: inline-flex;
   align-items: baseline;
-  gap: 0.1em;
+  gap: 0.08em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 .awards-stats em i {
   font-style: normal;
