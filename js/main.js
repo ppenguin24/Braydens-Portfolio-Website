@@ -5,6 +5,13 @@
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+  // ---------- Scroll state (hide header on mobile when scrolled) ----------
+  const setScrolled = () => {
+    document.body.classList.toggle('is-scrolled', window.scrollY > 10);
+  };
+  setScrolled();
+  window.addEventListener('scroll', setScrolled, { passive: true });
+
   // ---------- Mobile nav toggle ----------
   const navToggle = document.querySelector('.nav-toggle');
   const mobileNav = document.getElementById('mobile-nav');

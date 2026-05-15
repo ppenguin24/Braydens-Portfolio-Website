@@ -1383,6 +1383,22 @@ ul, ol { list-style: none; padding: 0; }
   .primary-nav { display: none; }
   .nav-toggle { display: block; }
 
+  /* Hide header (BM mark + menu button) when scrolled away from top; restore at top */
+  .site-header {
+    transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
+  }
+  body.is-scrolled .site-header {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+  /* Keep header visible while the mobile nav overlay is open */
+  body:has(.mobile-nav.is-open) .site-header {
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   .stage { min-height: 100svh; }
   .stage-lead {
     position: relative;
