@@ -98,6 +98,11 @@ ul, ol { list-style: none; padding: 0; }
 @media (hover: hover) and (pointer: fine) {
   .cursor { display: block; }
   html, body, a, button { cursor: none; }
+  /* Restore native cursor while video modal is open — iframe swallows pointermove */
+  body:has(.video-modal.is-open),
+  body:has(.video-modal.is-open) a { cursor: auto; }
+  body:has(.video-modal.is-open) button { cursor: pointer; }
+  body:has(.video-modal.is-open) .cursor { display: none; }
 }
 
 /* ---------- Container ---------- */
